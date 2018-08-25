@@ -1,11 +1,20 @@
+
 """
-amazonのURLから不要な部分を削除する
+クリップボードのamazonのURLから不要な部分を削除する
 """
+# -*- coding: utf-8 -*-
 
 import re
+import pyperclip as clip
+
+print(clip.paste())
 
 def urlShortner():
     text = "https://www.amazon.co.jp/Jupyter-Cookbook-Dan-Toomey/dp/1788839447/ref=sr_1_5?s=books&ie=UTF8&qid=1535164277&sr=1-5&keywords=Jupyter"
+
+    if clip.paste():
+        text = clip.paste()
+
     newUrl = "https://www.amazon.co.jp"
 
     urlLen = len(text)
@@ -49,12 +58,12 @@ def urlShortner():
     #print("2ndStart:" + str(i) )
     while i <  matchObjRef.start():
         newUrl = newUrl + text[i]
-    #    print (newUrl)
         i= i+1
 
     shortUrl = newUrl.replace("www","")
-    print (shortUrl)
 
-    return shortUrl
+#    print ("shortUrl:" + shortUrl)
+
+    clip.copy(shortUrl)
 
 urlShortner()
