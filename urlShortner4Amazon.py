@@ -11,7 +11,7 @@ from urllib.parse import urlparse
 #print(clip.paste())
 
 def urlShortner():
-    text = "https://www.amazon.co.jp/Jupyter-Cookbook-Dan-Toomey/dp/1788839447/ref=sr_1_5?s=books&ie=UTF8&qid=1535164277&sr=1-5&keywords=Jupyter"
+#    text = "https://www.amazon.co.jp/Jupyter-Cookbook-Dan-Toomey/dp/1788839447/ref=sr_1_5?s=books&ie=UTF8&qid=1535164277&sr=1-5&keywords=Jupyter"
 
     if clip.paste():
         text = clip.paste()
@@ -32,18 +32,6 @@ def urlShortner():
     matchObjRef = re.search(r'/ref', text)
 
     """"
-    if matchObj:
-        print (matchObj.group()) # マッチした文字列： abc
-        print (matchObj.start()) # マッチした文字列の開始位置： 3
-        print (matchObj.end())   # マッチした文字列の終了位置： 6
-        print (matchObj.span())  # マッチした文字列の開始位置と終了位置： (3, 6)
-
-    if matchObjDp:
-        print (matchObjDp.group()) # マッチした文字列： abc
-        print (matchObjDp.start()) # マッチした文字列の開始位置： 3
-        print (matchObjDp.end())   # マッチした文字列の終了位置： 6
-        print (matchObjDp.span())  # マッチした文字列の開始位置と終了位置： (3, 6)
-
     if matchObjRef:
         print (matchObjDp.start()) # マッチした文字列の開始位置： 3
 
@@ -52,14 +40,6 @@ def urlShortner():
 
     """
 
-    """
-    i:int = 1
-
-    while i  < matchObj.end():
-        newUrl = newUrl + text[i]
-        print (newUrl)
-        i= i+1
-    """
     if matchObjDp and matchObjRef:
         i:int = matchObjDp.start()
         #print("2ndStart:" + str(i) )
@@ -75,4 +55,6 @@ def urlShortner():
 
     else:
         print ("This url is not an introduction page of books on the amazon website.")
+
+
 urlShortner()
