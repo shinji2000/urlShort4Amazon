@@ -62,7 +62,7 @@ def urlShortner():
 
     shortUrl = newUrl.replace("www","")
 
-#    print ("shortUrl:" + shortUrl)
+    print ("shortUrl:" + shortUrl)
 
     clip.copy(shortUrl)
 
